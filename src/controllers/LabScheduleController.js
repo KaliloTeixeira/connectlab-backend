@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
-const { response } = require('express');
+const { query } = require('express');
 
 const LabSchedule = mongoose.model('LabSchedule');
 
 module.exports = {
 
     async listAvailableTimes(req, res) {
-        const availableTimes = await LabSchedule.find();
+        const { page = 1 } = req.query;
+        const availableTimes = await LabSchedule.paginate({}, { page, limit: 10 });
 
         return res.json(availableTimes);
     },

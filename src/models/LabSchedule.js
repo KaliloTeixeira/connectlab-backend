@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const mongoosePaginate = require('mongoose-paginate');
 
 const LabScheduleSchema = new mongoose.Schema({
     weekday: {
@@ -24,5 +25,7 @@ const LabScheduleSchema = new mongoose.Schema({
     },
 
 });
+
+LabScheduleSchema.plugin(mongoosePaginate);
 
 mongoose.model('LabSchedule', LabScheduleSchema);

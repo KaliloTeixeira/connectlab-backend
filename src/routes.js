@@ -2,7 +2,7 @@ const express = require('express');
 const routes = express.Router();
 
 const SchoolController = require('./controllers/SchoolController');
-const LabScheduleController = require('./controllers/LabScheduleControlle');
+const LabScheduleController = require('./controllers/LabScheduleController');
 
 // List Schools
 routes.get('/', SchoolController.listSchools)
