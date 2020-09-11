@@ -13,5 +13,7 @@ routes.post('/', SchoolController.addSchool);
 routes.get('/labs', LabScheduleController.listAvailableTimes);
 // Add time available
 routes.post('/labs', LabScheduleController.addAvailableTime);
+// Search Labs
+
 
 module.exports = routes;
